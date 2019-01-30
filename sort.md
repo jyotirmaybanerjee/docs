@@ -92,7 +92,6 @@ console.log(ul);
 
 ## Selection Sort
 
-![Selection Sort](images/insertion_sort_amin.gif)
 
 ```javascript
 function selectionSort(items) {
@@ -115,6 +114,7 @@ function selectionSort(items) {
 	}
 }
 ```
+![Selection Sort](images/selection_sort.png)
 
 ## Quick Sort
 ### (sometimes called partition-exchange sort)
