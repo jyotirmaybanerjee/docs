@@ -1,5 +1,13 @@
 ## Binary Search
 
+*A natural elimination-based strategy for searching a sorted array.
+
+*Main idea: eliminate half (lower or upper) of the keys from consideration, while keeping the keys in sorted order.
+*As an example, given a sorted array of integers, [4,5,10,15,20,25,30,35,40,45,50,58,65,80,98], find the target, 20 andreturn its position.
+*Algorithm:
+
+![Binary Search](images/binary_search.png)
+
 ```javascript
 function binarySearch(searchArray, searchElement) {
   let minIndex = 0;
