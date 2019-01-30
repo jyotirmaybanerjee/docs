@@ -41,7 +41,6 @@ console.log(mergesort(unsortedArr));
 ## Bubble Sort
 
 ![Bubble sort](images/bubble_sort.gif)
-![Bubble sort](images/bubble_sort_2.png)
 
 ```javascript
 function bubbleSort(items) {
@@ -60,13 +59,13 @@ function bubbleSort(items) {
 }
 
 ```
+![Bubble sort Performance](images/bubble_sort_2.png)
 
 
 ## Insertion Sort
 
 ![Insertion Sort](images/insertion_sort_amin.gif)
 ![Insertion Sort](images/insertion_sort_2.gif)
-![Insertion Sort](images/insertion_sort_performance.png)
 
 ```javascript
 function insertionSort(unsortedList) {
@@ -88,3 +87,85 @@ var ul = [5, 3, 1, 2, 4];
 insertionSort(ul);
 console.log(ul);
 ```
+![Insertion Sort Performance](images/insertion_sort_performance.png)
+
+
+## Selection Sort
+
+![Selection Sort](images/insertion_sort_amin.gif)
+
+```javascript
+function selectionSort(items) {
+	var length = items.length;
+	for (var i = 0; i < length - 1; i++) {
+		//Number of passes
+		var min = i; //min holds the current minimum number position for each pass; i holds the Initial min number
+		for (var j = i + 1; j < length; j++) { //Note that j = i + 1 as we only need to go through unsorted array
+			if (items[j] < items[min]) { //Compare the numbers
+				min = j; //Change the current min number position if a smaller num is found
+			}
+		}
+		if (min != i) {
+			//After each pass, if the current min num != initial min num, exchange the position.
+			//Swap the numbers 
+			var tmp = items[i];
+			items[i] = items[min];
+			items[min] = tmp;
+		}
+	}
+}
+```
+
+## Quick Sort
+### (sometimes called partition-exchange sort)
+
+![Quick Sort](images/Sorting_quicksort_anim.gif)
+
+```javascript
+
+function swap(items, firstIndex, secondIndex){
+    let temp = items[firstIndex];
+    items[firstIndex] = items[secondIndex];
+    items[secondIndex] = temp;
+}
+
+function partition(items, left, right) {
+    let pivot = items[Math.floor((right + left) / 2)];
+    let i = left;
+    let j = right;
+    while (i <= j) {
+        while (items[i] < pivot) {
+            i++;
+        }
+        while (items[j] > pivot) {
+            j--;
+        }
+        if (i <= j) {
+            swap(items, i, j);
+            i++;
+            j--;
+        }
+    }
+    return i;
+}
+
+function quickSort(items, left, right) {
+    let index;
+    if (items.length > 1) {
+        index = partition(items, left, right);
+        if (left < index - 1) {
+            quickSort(items, left, index - 1);
+        }
+        if (index < right) {
+            quickSort(items, index, right);
+        }
+    }
+    return items;
+}
+
+
+// first call
+console.log(quickSort(items, 0, items.length - 1));
+
+```
+![Quick Sort Performance](images/quick_sort_performance.png)
