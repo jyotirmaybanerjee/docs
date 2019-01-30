@@ -64,7 +64,7 @@ function bubbleSort(items) {
 
 ## Insertion Sort
 
-![Insertion Sort](images/insertion_sort.gif)
+![Insertion Sort](images/insertion_sort_amin.gif)
 ![Insertion Sort](images/insertion_sort_2.gif)
 ![Insertion Sort](images/insertion_sort_performance.png)
 
