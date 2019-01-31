@@ -167,5 +167,27 @@ function quickSort(items, left, right) {
 // first call
 console.log(quickSort(items, 0, items.length - 1));
 
+### Second method
+
+const arr = [6, 1, 5, 3, 9, 6, 7, 10, 16, 4, 0, 12, 2]
+
+function qsort(arr){
+    if (arr.length < 2) return arr
+    // choose a pivot, p
+    // the choice of pivot can effect worst-case performance
+    // for this, we'll just use the first element.
+    const [p, ...rest] = arr
+
+    // partition array into element greater and lesser that the pivot
+    // this can be optimized so you don't loop through the array twice
+    const low  = rest.filter(n => n <= p)
+    const high = rest.filter(n => n > p)
+
+    // recurse on both partitions and reassemble as recursion unwinds
+    return [...qsort(low), p, ...qsort(high)]
+}
+console.log(qsort(arr).join(', '))
+
+
 ```
 ![Quick Sort Performance](images/quick_sort_performance.png)
