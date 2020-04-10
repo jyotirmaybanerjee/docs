@@ -46,7 +46,7 @@ console.log(mergesort(unsortedArr));
 function bubbleSort(items) {
   const length = items.length;
   for (let i = 0; i < length; i++) { //Number of passes
-    for (let j = 0; j < (length - i - 1); j++) { //Notice that j < (length - i)
+    for (let j = 0; j < length - i; j++) { //Notice that j < (length - i)
       //Compare the adjacent positions
       if (items[j] > items[j + 1]) {
         //Swap the numbers
